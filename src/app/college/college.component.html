@@ -1,0 +1,114 @@
+<div class="background">
+<div>
+<h1>{{'College' | translate}}</h1>
+<button  type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" ><i class="fa fa-plus" aria-hidden="true"></i>{{'Add' | translate}}</button>
+</div>
+<div>
+  <div class="container" >
+<table class="table" [svData]="college" #sv="svDataTable" [svRowsOnPage]="5" svSortBy="name" svSortOrder="asc">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>{{'Id' | translate}}</th>
+            <th>
+                <sv-default-sorter by="name">{{'Name' | translate}}</sv-default-sorter>
+            </th>
+            <th>{{'Address' | translate}}</th>
+            <th>{{'Action' | translate}}</th>
+        </tr>
+    </thead>
+    <tbody>
+              <tr *ngFor="let item of sv.data">
+            <td><i class="fa fa-university fa-lg" aria-hidden="true"></i></td>
+            <td>{{item.id|id:"CLGID"}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.description}}</td>
+            <td><button  class="btn btn-danger" (click)="onCollegeDelete(item.id)"><i class="fa fa-trash-o" aria-hidden="true"></i>{{'Delete' | translate}}</button> |
+              <button  type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal1" (click)="editCollegeget(item)" ><i class="fa fa-pencil" aria-hidden="true"></i>{{'Edit' | translate}}</button>
+              </td>
+
+        </tr>
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="6">
+                <sv-bootstrap-paginator [rowsOnPageSet]="[5, 10, 25]"></sv-bootstrap-paginator>
+            </td>
+        </tr>
+        </tfoot>
+</table>
+
+<!-- ADD POP-UP -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="container">
+
+
+      <form (ngSubmit)="onCollegeSave(f)" #f="ngForm">
+          <h2 style="margin-left: 120px">{{'Add' | translate}}</h2>
+          <div class="form-group" >
+            <label>{{'College Name' | translate}}</label>
+            <input name="name" autocomplete="off" ngModel class="form-control"  style="width: 500px"  type="text" placeholder="Enter CollegeName">
+
+          </div>
+          <div class="form-group" >
+            <label>{{'Address' | translate}}</label>
+            <input name="description" autocomplete="off" ngModel class="form-control" style="width: 500px"  type="text"  placeholder="Enter Address ">
+
+          </div>
+
+          <div class="form-group">
+            <button  type="submit" style="width: 100px" class="form-control btn btn-primary" data-dismiss="modal">{{'Save' | translate}}</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{'Close' | translate}}</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- EDIT POP-UP -->
+<div class="modal fade" id="myModal1" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="container">
+
+
+      <form (ngSubmit)="UpdateCollege(f1)"  #f1="ngForm">
+          <h2 style="margin-left: 80px">{{'Edit' | translate}}</h2>
+          <div class="form-group" >
+              <label>{{'College ID' | translate}}</label>
+              <input name="id" [(ngModel)]="collid"  class="form-control" style="width: 500px"  type="text">
+
+            </div>
+          <div class="form-group" >
+            <label>{{'College Name' | translate}}</label>
+            <input name="name" [(ngModel)]="collegename"  class="form-control" style="width: 500px"  type="text">
+
+          </div>
+          <div class="form-group" >
+            <label>{{'Address' | translate}}</label>
+            <input name="description"  [(ngModel)]="department" class="form-control"  style="width: 500px"  type="text" >
+
+          </div>
+
+          <div class="form-group">
+            <button type="submit" style="width: 100px"  class="form-control btn btn-primary" >{{'Update' | translate}}</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{'Close' | translate}}</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>

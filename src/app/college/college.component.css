@@ -1,0 +1,39 @@
+ /* thead {
+  background-color: powderblue;
+  font: icon;
+} */
+
+th {
+  font-family: cursive;
+  color: aliceblue
+}
+
+button.btn.btn-success {
+  float: right;
+  margin-top: -44px;
+  margin-right: 21px;
+}
+
+table.table {
+  margin-top: 23px;
+}
+
+tbody {
+  /* background-color: #1c2140; */
+  color: aliceblue
+}
+
+.background{
+  background-image: url('src/assets/coll.jpg');
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: block;
+  background-size: cover;
+  background-position: 50% 50%;
+  /* opacity: 0.4;
+  z-index: -1; */
+}
+
+
+

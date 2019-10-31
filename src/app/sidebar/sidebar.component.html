@@ -1,0 +1,51 @@
+<app-menu (sidebarclick)="onClickSidebar()" class="www"></app-menu>
+
+<p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">
+  <h3 style="font-weight:normal">COLLEGE</h3>
+  <a class="nav-link active active-class" [routerLink]="['/home']" routerLinkActive="router-link-active" (click)="close()" >
+    <i class="fa fa-home"></i>Home</a>
+    <span>{{'Home' | translate}}</span>
+  <br>
+  <a class="nav-link" [routerLink]="['/college']" routerLinkActive="router-link-active" (click)="close()"><i class="fa fa-bars" ></i>Details</a>
+  <span>{{'Details' | translate}}</span>
+  <br>
+  <a class="nav-link" [routerLink]="['/aboutus']" routerLinkActive="router-link-active" (click)="close()"><i class="fa fa-info-circle" aria-hidden="true" ></i>About us</a>
+  <span>{{'About us' | translate}}</span>
+  <br>
+  <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="router-link-active" (click)="close()"><i class="fa fa-mobile" aria-hidden="true"></i>
+    Contact Us</a>
+    <span>{{'Contact Us' | translate}}</span>
+  <br>
+  <a class="nav-link" [routerLink]="['/data']" routerLinkActive="router-link-active" (click)="close()"><i class="fa fa-mobile" aria-hidden="true"></i>
+    PrimengData</a>
+    <span>{{'PrimengData' | translate}}</span>
+    <br>
+    <a class="nav-link" [routerLink]="['/datatable']" routerLinkActive="router-link-active" (click)="close()"><i class="fa fa-mobile" aria-hidden="true"></i>
+      Datatable</a>
+      <span>{{'Datatable' | translate}}</span>
+      <br>
+      <a class="nav-link" [routerLink]="['/datac']" routerLinkActive="router-link-active" (click)="close()"><i class="fa fa-mobile" aria-hidden="true"></i>
+        Data</a>
+        <span>{{'Data' | translate}}</span>
+        <br>
+
+        <div class="nested-menu">
+          <a class="list-group-item" (click)="addExpandClass('languages')" >
+            <span>{{ 'Language'  }} <b class="caret"></b></span>
+          </a>
+          <!-- <li class="nested" [class.expand]="showMenu === 'languages'"> -->
+            <ul class="submenu">
+              <!-- <li><a href="javascript:void(0)" (click)="changeLang('en')">{{ 'English' | translate }}</a></li>
+              <li><a href="javascript:void(0)" (click)="changeLang('fr')">{{ 'French' | translate }}</a></li>
+              <li><a href="javascript:void(0)" (click)="changeLang('de')">{{ 'German' | translate }}</a></li>
+              <li><a href="javascript:void(0)" (click)="changeLang('kan')">{{ 'Kannada' | translate }}</a></li>
+              <li><a href="javascript:void(0)" (click)="changeLang('hindi')">{{ 'Hindi' | translate }}</a></li> -->
+              <li><a href="javascript:void(0)" (click)="changeLang('en')">{{ 'English'  }}</a></li>
+              <li><a href="javascript:void(0)" (click)="changeLang('fr')">{{ 'French'}}</a></li>
+              <li><a href="javascript:void(0)" (click)="changeLang('de')">{{ 'German'}}</a></li>
+              <li><a href="javascript:void(0)" (click)="changeLang('kan')">{{ 'Kannada' }}</a></li>
+              <li><a href="javascript:void(0)" (click)="changeLang('hindi')">{{ 'Hindi' }}</a></li>
+            </ul>
+          <!-- </li> -->
+        </div>
+</p-sidebar>

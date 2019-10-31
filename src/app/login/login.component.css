@@ -1,0 +1,18 @@
+/* .bgl{
+  background-image: url('src/assets/login1.jpg');
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: block;
+  background-size: cover;
+  background-position: 50% 50%; */
+  /* opacity: 0.4;
+  z-index: -1; */
+/* } */
+
+.container {
+  border: ridge;
+  margin-top: 230px;
+}
+
+
